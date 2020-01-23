@@ -1,19 +1,13 @@
 <template>
-  <div>
-    <Header />
-    <Content />
-    <Footer />
-  </div>
+  <ParentLayout></ParentLayout>
 </template> 
 
 <script>
-import Header from '@theme/components/Header.vue'
-import Footer from '@theme/components/Footer.vue'
+import ParentLayout from '@parent-theme/layouts/Layout.vue'
 
 export default {
   components: {
-    Header,
-    Footer
+    ParentLayout
   }
 }
 </script>
