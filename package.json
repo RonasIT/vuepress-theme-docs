@@ -1,5 +1,5 @@
 {
-  "name": "vuepress-theme-docs",
+  "name": "@ronas-it/vuepress-theme-docs",
   "version": "0.0.1",
   "description": "General theme for vuepress that used for all docs in Ronas IT",
   "main": "index.js",
