@@ -1,5 +1,7 @@
-<template> 
+<template>
+    <Header>
     <Content/> 
+    <Footer>
 </template> 
 
 <style lang="scss">
