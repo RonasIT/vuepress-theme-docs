@@ -1,10 +1,14 @@
 {
-  "name": "vuepress-theme-ronasit-docs",
+  "name": "vuepress-theme-docs",
   "version": "0.0.1",
-  "description": "General theme for vuewpress tah used for all docs in Ronas IT",
+  "description": "General theme for vuepress that used for all docs in Ronas IT",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonasIT/vuepress-theme-docs.git"
   },
   "keywords": [
     "vuepress",
@@ -12,6 +16,10 @@
     "ronasit",
     "docs"
   ],
-  "author": "Evgeny Leonov",
-  "license": "ISC"
+  "author": "Ronas IT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RonasIT/vuepress-theme-docs/issues"
+  },
+  "homepage": "https://github.com/RonasIT/vuepress-theme-docs#readme"
 }
