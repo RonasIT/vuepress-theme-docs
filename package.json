@@ -22,7 +22,7 @@
     "url": "https://github.com/RonasIT/vuepress-theme-docs/issues"
   },
   "homepage": "https://github.com/RonasIT/vuepress-theme-docs#readme",
-  "devDependencies": {
+  "peerDependencies": {
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2"
   }
