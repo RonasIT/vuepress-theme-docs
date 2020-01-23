@@ -1,0 +1,17 @@
+{
+  "name": "vuepress-theme-ronasit-docs",
+  "version": "0.0.1",
+  "description": "General theme for vuewpress tah used for all docs in Ronas IT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vuepress",
+    "theme",
+    "ronasit",
+    "docs"
+  ],
+  "author": "Evgeny Leonov",
+  "license": "ISC"
+}
