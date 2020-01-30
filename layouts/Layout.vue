@@ -30,8 +30,8 @@ html, body {
   --code: #476582;
   --code-background: rgba(27,31,35,0.05);
 
-  color: var(--text-color);
-  background: var(--background);
+  color: var(--text-color) !important;
+  background: var(--background) !important;
 }
 
 @media (prefers-color-scheme: dark) { 
@@ -73,13 +73,13 @@ a {color: #209ef6;
   tr:nth-child(2n) {background: var(--table-alt-row);}
 }
 
-.navbar {border-bottom-color: var(--separator); background: var(--background);
+.navbar {border-bottom-color: var(--separator) !important; background: var(--background) !important;
   .links {background: transparent;}
   .logo {margin: 0;}
   .site-name {font-size: 1rem; display: none;}
 }
 
-.sidebar {border-right: 0; overflow: hidden; width: 15rem; background: var(--background);
+.sidebar {border-right: 0 !important; overflow: hidden !important; width: 15rem !important; background: var(--background) !important;
   & > .sidebar-links {padding-bottom: 3rem; position: absolute; top: 0; bottom: 0; left: 0; width: 20rem; overflow-y: auto;
     & > li {width: 15rem;}
   }
@@ -133,8 +133,4 @@ a {color: #209ef6;
     }
   }
 }
-
-
-
-
 </style>
