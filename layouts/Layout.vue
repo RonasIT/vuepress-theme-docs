@@ -56,7 +56,6 @@ a {color: #209ef6;
     .icon {display: none;}
   }
 }
-.theme-default-content:not(.custom) { max-width: auto !important;};
 .theme-default-content:not(.custom) a:hover {text-decoration: none;}
 .theme-default-content code {color: var(--code); background: var(--code-background);}
 
@@ -81,8 +80,7 @@ a {color: #209ef6;
 }
 
 .sidebar {border-right: 0; overflow: hidden; width: 15rem; background: var(--background);
-  &-links {position: absolute; top: 0; bottom: 0; left: 0; width: 20rem; overflow-y: auto;}
-  & > .sidebar-links {padding-bottom: 3rem;
+  & > .sidebar-links {padding-bottom: 3rem; position: absolute; top: 0; bottom: 0; left: 0; width: 20rem; overflow-y: auto;
     & > li {width: 15rem;}
   }
   & > .sidebar-links > li > a.sidebar-link {border-bottom: 0; font-size: 0.85rem;}
@@ -121,7 +119,9 @@ a {color: #209ef6;
 
 .search-box {
   input {border: 0; border-radius: 8px;
-    background: var(--input) url(/documentation/assets/img/search.83621669.svg) 0.8rem 0.6rem no-repeat;
+    background-color: var(--input);
+    background-position: 0.8rem 0.6rem;
+    background-repeat: no-repeat;
     background-size: 0.85rem; transition: all 0.3s; color: var(--input-text);
     &:focus {background-color: var(--input-focused);}
   }
@@ -133,4 +133,8 @@ a {color: #209ef6;
     }
   }
 }
+
+
+
+
 </style>
