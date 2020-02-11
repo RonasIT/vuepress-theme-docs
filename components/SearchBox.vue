@@ -23,7 +23,7 @@
     >
       <li
         v-for="(s, i) in suggestions"
-        :key="JSON.stringify(s)" 
+        :key="JSON.stringify(s)"
         class="suggestion"
         :class="{ focused: i === focusIndex }"
         @mousedown="go(i)"
@@ -31,7 +31,7 @@
       >
         <a :href="s.path" @click.prevent>
           <span class="page-title">{{ s.title || s.path }}</span>
-          <DocId :relativePath="s.relativePath" />
+          <DocId v-if="$site.themeConfig.isSearchByDocId" :relativePath="s.relativePath" />
           <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
         </a>
       </li>
@@ -67,11 +67,13 @@ export default {
       const { pages } = this.$site;
       const max =
         this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
+      const isSearchByDocId = this.$site.themeConfig.isSearchByDocId || false;
       const localePath = this.$localePath;
       const matches = item =>
         item &&
         ((item.title && item.title.toLowerCase().indexOf(query) > -1) ||
-          (item.relativePath !== undefined &&
+          (isSearchByDocId &&
+            item.relativePath !== undefined &&
             item.relativePath.toLowerCase().indexOf(query) > -1));
       const res = [];
       for (let i = 0; i < pages.length; i++) {
