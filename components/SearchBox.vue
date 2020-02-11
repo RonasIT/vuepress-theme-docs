@@ -23,7 +23,7 @@
     >
       <li
         v-for="(s, i) in suggestions"
-        :key="i"
+        :key="JSON.stringify(s)" 
         class="suggestion"
         :class="{ focused: i === focusIndex }"
         @mousedown="go(i)"
