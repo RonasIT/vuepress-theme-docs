@@ -31,6 +31,7 @@
       >
         <a :href="s.path" @click.prevent>
           <span class="page-title">{{ s.title || s.path }}</span>
+          <DocId :relativePath="s.relativePath" />
           <span v-if="s.header" class="header">&gt; {{ s.header.title }}</span>
         </a>
       </li>
@@ -103,6 +104,7 @@ export default {
           }
         }
       }
+
       return res;
     },
 
@@ -254,6 +256,12 @@ export default {
     a {
       white-space: normal;
       color: lighten($textColor, 35%);
+
+      .badge {
+        font-size: 10px;
+        height: 14px;
+        line-height: 14px;
+      }
 
       .page-title {
         font-weight: 600;
