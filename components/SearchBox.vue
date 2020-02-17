@@ -69,12 +69,17 @@ export default {
         this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
       const isSearchByDocIdEnabled = this.$site.themeConfig.isSearchByDocIdEnabled || false;
       const localePath = this.$localePath;
-      const matches = item =>
-        item &&
-        ((item.title && item.title.toLowerCase().indexOf(query) > -1) ||
+      const matches = (item) => {
+        const relativePathParts = (item.relativePath) ? item.relativePath.split('/') : [];
+        const fileName = relativePathParts[relativePathParts.length - 1];
+        const formattedFileName = (fileName) ? fileName.replace('.md', '').toLowerCase() : '';
+
+        return item &&
+          ((item.title && item.title.toLowerCase().indexOf(query) > -1) ||
           (isSearchByDocIdEnabled &&
-            item.relativePath !== undefined &&
-            item.relativePath.toLowerCase().indexOf(query) > -1));
+            formattedFileName !== '' &&
+            formattedFileName.indexOf(query) > -1));
+      };
       const res = [];
       for (let i = 0; i < pages.length; i++) {
         if (res.length >= max) break;
