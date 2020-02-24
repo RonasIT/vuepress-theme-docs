@@ -67,18 +67,28 @@ export default {
       const { pages } = this.$site;
       const max =
         this.$site.themeConfig.searchMaxSuggestions || SEARCH_MAX_SUGGESTIONS;
-      const isSearchByDocIdEnabled = this.$site.themeConfig.isSearchByDocIdEnabled || false;
+      const isSearchByDocIdEnabled =
+        this.$site.themeConfig.isSearchByDocIdEnabled || false;
       const localePath = this.$localePath;
-      const matches = (item) => {
-        const relativePathParts = (item.relativePath) ? item.relativePath.split('/') : [];
+      const matches = item => {
+        const relativePathParts = item.relativePath
+          ? item.relativePath.split("/")
+          : [];
         const fileName = relativePathParts[relativePathParts.length - 1];
-        const formattedFileName = (fileName) ? fileName.replace('.md', '').toLowerCase() : '';
+        const formattedFileName = fileName
+          ? fileName.replace(".md", "").toLowerCase()
+          : "";
 
-        return item &&
+        console.log(formattedFileName);
+
+        return (
+          item &&
+          formattedFileName !== "readme" &&
           ((item.title && item.title.toLowerCase().indexOf(query) > -1) ||
-          (isSearchByDocIdEnabled &&
-            formattedFileName !== '' &&
-            formattedFileName.indexOf(query) > -1));
+            (isSearchByDocIdEnabled &&
+              formattedFileName !== "" &&
+              formattedFileName.indexOf(query) > -1))
+        );
       };
       const res = [];
       for (let i = 0; i < pages.length; i++) {
