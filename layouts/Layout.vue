@@ -3,7 +3,7 @@
     <ParentLayout></ParentLayout>
     <Footer></Footer>
   </div>
-</template> 
+</template>
 
 <script>
 import ParentLayout from '@parent-theme/layouts/Layout.vue'
@@ -34,8 +34,8 @@ html, body {
   background: var(--background) !important;
 }
 
-@media (prefers-color-scheme: dark) { 
-  html, body {--text-color: #B2C3D4; 
+@media (prefers-color-scheme: dark) {
+  html, body {--text-color: #B2C3D4;
     --background: #18222D;
     --separator: #22303F;
     --input: #22303F;
@@ -45,7 +45,13 @@ html, body {
     --code: #7693B1;
     --code-background: #22303F;
   }
-} 
+
+  .custom-block {
+    &.tip,
+    &.warning,
+    &.danger { background-color: unset; color: unset; }
+  }
+}
 
 a {color: #209ef6;
   &.sidebar-link { font-size: 0.85rem; color: var(--text-color);
@@ -55,6 +61,7 @@ a {color: #209ef6;
   &[rel="noopener noreferrer"] {
     .icon {display: none;}
   }
+  &.sidebar-heading { color: var(--text-color); }
 }
 .theme-default-content:not(.custom) a:hover {text-decoration: none;}
 .theme-default-content code {color: var(--code); background: var(--code-background);}
@@ -106,7 +113,7 @@ a {color: #209ef6;
   .dropdown-title {outline: none; line-height: normal; font-size: 0.85rem; color: var(--text-color);
     &:hover {color: #209ef6;}
   }
-  .nav-dropdown {border: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: var(--input); 
+  .nav-dropdown {border: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: var(--input);
     padding: 0.4rem;
     .dropdown-item a {transition: all 0.6s; padding: 0.5rem; border-radius: 4px; line-height: normal;
       &:hover {color: #209ef6; background: rgba(0,0,0,0.04); transition: all 0.2s;}
